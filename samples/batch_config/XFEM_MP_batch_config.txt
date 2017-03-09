@@ -1,0 +1,61 @@
+# Sample batch configuration file for FEM Mdb simulations
+#
+# The hash symbol signifies a comment.
+# Everything on a line after "#" is ignored.
+# Blank spaces and empty lines are ignored.
+# Colon ":" separates a parameter name and parameter values.
+# Multiple values per parameter are separated with commas ","
+# Do not put quotes around names and values.
+# Use Policrack Create Crack Mdb for reference.
+# Some parameters expect a key word, possible keywords are specified below.
+# The number of parameter combinations grows quickly. Use common sense, or go bonkers!
+
+
+
+# Analysis Type
+analysisType: XFEM_mp
+crackType: embedded     # embedded, surface, edge
+
+
+# Crack Dimensions
+a: 10
+b: 10
+
+
+# Container Dimensions
+containerH: 20
+containerD: 40
+
+
+# Load Case
+loads: infiniteBody
+gamma: 0
+omega: 0
+sigma: 100
+
+
+# Seed Parameters
+containerSeeds: 5
+partitionContainerSeeds: 2
+
+
+# Elements
+elementType: LinearHexRI
+singularityRadius:0
+
+
+# Partition Container Dimensions
+meshPartitionOffset: 5
+meshPartitionHeight: 10
+
+
+# Material
+v: 0.3
+E: 2e5
+materialName: steel
+
+
+# Post-processing, Results and Database
+saveMdb: yes        # yes, no
+saveResults: yes    # yes, no
+outputDatabase: database_name
